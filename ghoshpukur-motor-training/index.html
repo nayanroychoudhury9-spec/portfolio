@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghoshpukur Motor Training School | Govt. Approved Driving School</title>
+  <meta name="description" content="Official website of Ghoshpukur Motor Training School. Govt. approved driving training for 4-wheelers and 2-wheelers with dual-control vehicles, experienced instructors, and complete RTO license assistance in Ghoshpukur, Siliguri.">
+  <meta name="keywords" content="Ghoshpukur motor training school, driving school Ghoshpukur, car driving training Siliguri, two wheeler driving school, driving license assistance WB">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. Top School Banner & Contact Bar
+       ========================================================================== -->
+  <div class="top-bar" id="topBanner">
+    <div class="container top-bar-content">
+      <div class="top-bar-left">
+        <span class="gov-badge"><i class="fa-solid fa-shield-halved"></i> GOVT. RECOGNIZED MOTOR TRAINING SCHOOL</span>
+        <span class="top-item"><i class="fa-solid fa-file-contract"></i> Reg No: WB/DAR/MTS/2018/042</span>
+        <span class="top-item"><i class="fa-solid fa-clock"></i> <span class="school-hours-text">Mon - Sun: 6:00 AM - 7:00 PM</span></span>
+      </div>
+      <div class="top-bar-right">
+        <span class="top-item"><i class="fa-solid fa-phone"></i> Helpline: <a href="tel:+919832012345" class="school-phone-link school-phone-text">+91 98320 12345</a></span>
+        <span class="top-item"><i class="fa-brands fa-whatsapp"></i> <a href="#" class="school-whatsapp-link" target="_blank">WhatsApp Us</a></span>
+        <button class="btn btn-sm btn-outline open-admin-portal-btn" style="color:#f1f5f9; border-color:rgba(255,255,255,0.3); padding:0.2rem 0.6rem; font-size:0.75rem;">
+          <i class="fa-solid fa-lock"></i> Admin Portal
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Announcement Ticker -->
+  <div class="announcement-ticker">
+    <div class="container ticker-wrapper">
+      <span class="ticker-label"><i class="fa-solid fa-bullhorn"></i> Announcement</span>
+      <div class="ticker-text" id="announcementText">
+        📢 Admissions Open for Upcoming Month Batches! Special 15% Combo Discount on 2-Wheeler + 4-Wheeler Training. Female instructors available for ladies!
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       2. Main Navigation Header
+       ========================================================================== -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="#heroSliderSection" class="brand-logo">
+        <div class="logo-icon-wrapper">
+          <i class="fa-solid fa-steering-wheel"></i>
+        </div>
+        <div class="brand-text">
+          <h1 class="school-name-text">Ghoshpukur Motor Training School</h1>
+          <span>Govt. Approved Motor Driving Institute</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="mainNavMenu">
+          <li><a href="#heroSliderSection" class="nav-link active">Home</a></li>
+          <li><a href="#courses" class="nav-link">Courses & Fees</a></li>
+          <li><a href="#admissionModal" class="nav-link open-admission-modal-btn">Candidate Admission</a></li>
+          <li><a href="#gallery" class="nav-link">Training Gallery</a></li>
+          <li><a href="#process" class="nav-link">Training Process</a></li>
+          <li><a href="#faq" class="nav-link">FAQs</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="btn btn-primary open-admission-modal-btn">
+          <i class="fa-solid fa-pen-to-square"></i> Apply Now
+        </button>
+        <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       3. Auto-Slideable Pictures Hero Carousel
+       ========================================================================== -->
+  <section class="hero-slider-section" id="heroSliderSection">
+    <div class="carousel-container" id="carouselSlidesContainer">
+      <!-- Slides will be rendered dynamically from GMTS_DB data -->
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-btn carousel-prev" id="carouselPrevBtn" aria-label="Previous Slide">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button class="carousel-btn carousel-next" id="carouselNextBtn" aria-label="Next Slide">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+    <!-- Indicators -->
+    <div class="carousel-indicators" id="carouselIndicators"></div>
+  </section>
+
+  <!-- ==========================================================================
+       4. Key Highlights & Trust Badges Strip
+       ========================================================================== -->
+  <div class="container">
+    <div class="highlights-strip">
+      <div class="highlights-grid">
+        <div class="highlight-box">
+          <div class="highlight-icon">
+            <i class="fa-solid fa-shield-check"></i>
+          </div>
+          <div class="highlight-text">
+            <h3>Govt. Approved Institute</h3>
+            <p>Certified instructors with official Siliguri & Darjeeling RTO affiliation.</p>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <div class="highlight-icon">
+            <i class="fa-solid fa-car-on"></i>
+          </div>
+          <div class="highlight-text">
+            <h3>Dual-Control Vehicles</h3>
+            <p>100% safety with trainer dual clutch and brake controls on all cars.</p>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <div class="highlight-icon">
+            <i class="fa-solid fa-id-card"></i>
+          </div>
+          <div class="highlight-text">
+            <h3>Driving License Assistance</h3>
+            <p>Comprehensive Learner & Permanent DL test guidance on 8 & H tracks.</p>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <div class="highlight-icon">
+            <i class="fa-solid fa-user-check"></i>
+          </div>
+          <div class="highlight-text">
+            <h3>Flexible Batches</h3>
+            <p>Early morning, evening & weekend slots with special ladies batches.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       5. Course Details Section
+       ========================================================================== -->
+  <section class="section-padding courses-section" id="courses">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-graduation-cap"></i> Training Programs</span>
+        <h2 class="section-title">Our Motor Driving Courses & Fees</h2>
+        <p class="section-subtitle">
+          Whether you are an absolute beginner or need highway confidence, we have tailored training courses with certified mentors and dual-control cars.
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="course-filter-bar">
+        <button class="filter-btn active" data-category="all">All Courses</button>
+        <button class="filter-btn" data-category="4w">Four Wheeler (Car)</button>
+        <button class="filter-btn" data-category="2w">Two Wheeler (Bike/Scooter)</button>
+        <button class="filter-btn" data-category="combo">Combo (2W + 4W)</button>
+        <button class="filter-btn" data-category="refresher">Refresher (7 Days)</button>
+        <button class="filter-btn" data-category="commercial">Commercial / LMV-TR</button>
+      </div>
+
+      <!-- Courses Grid -->
+      <div class="courses-grid" id="coursesGrid">
+        <!-- Injected via JavaScript from GMTS_DB -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. Candidate Admission Callout Section
+       ========================================================================== -->
+  <section class="section-padding admission-section" id="admission-form">
+    <div class="container">
+      <div class="form-wrapper-card" style="grid-template-columns: 1.2fr 1fr; align-items: stretch;">
+        <!-- Sidebar Info -->
+        <div class="form-sidebar-info" style="padding: 3.5rem 2.5rem;">
+          <div>
+            <span class="badge badge-amber" style="margin-bottom:1rem;"><i class="fa-solid fa-circle-check"></i> Online Admission 2026</span>
+            <h2 style="color:white; font-size:2.2rem; margin-bottom:1rem;">Candidate Admission & Enrollment</h2>
+            <p style="color:#cbd5e1; font-size:1.05rem; line-height:1.6; margin-bottom:2rem;">
+              Reserve your driving training seat at Ghoshpukur Motor Training School in just 2 minutes. Fill up the admission form online and get instant confirmation with your application reference ID.
+            </p>
+
+            <ul class="info-perks-list">
+              <li>
+                <i class="fa-solid fa-id-card-clip"></i>
+                <div>
+                  <strong>Learner License (LL) Assistance</strong>
+                  <div style="font-size:0.85rem; color:#cbd5e1;">Complete online portal application and test slot booking assistance.</div>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-person-chalkboard"></i>
+                <div>
+                  <strong>Certified Expert Mentors</strong>
+                  <div style="font-size:0.85rem; color:#cbd5e1;">Patient, non-stressful one-on-one practical road guidance.</div>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-venus"></i>
+                <div>
+                  <strong>Special Ladies Batches</strong>
+                  <div style="font-size:0.85rem; color:#cbd5e1;">Safe and comfortable environment with experienced female trainers.</div>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                  <strong>Dual-Control Safety Vehicles</strong>
+                  <div style="font-size:0.85rem; color:#cbd5e1;">Co-driver secondary clutch and brake for 100% learning safety.</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar-contact-card">
+            <h4><i class="fa-solid fa-headset"></i> Need Immediate Assistance?</h4>
+            <p style="font-size:0.85rem; color:#e2e8f0; margin-bottom:0.5rem;">Speak with our chief trainer directly:</p>
+            <a href="tel:+919832012345" class="school-phone-text">+91 98320 12345</a>
+          </div>
+        </div>
+
+        <!-- Action Card -->
+        <div style="padding: 3.5rem 2.5rem; text-align: center; background: white; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <div style="width: 76px; height: 76px; border-radius: 50%; background: rgba(231, 111, 81, 0.1); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin-bottom: 1.5rem;">
+            <i class="fa-solid fa-file-signature"></i>
+          </div>
+          <h3 style="font-size: 1.65rem; color: var(--primary-dark); margin-bottom: 0.75rem;">Apply for Motor Training</h3>
+          <p style="color: #64748b; font-size: 0.95rem; line-height: 1.5; margin-bottom: 2rem; max-width: 380px;">
+            Click below to open the <strong>Candidate Admission Form</strong> in a popup window. Select your course, vehicle preference, and batch timing.
+          </p>
+          <button type="button" class="btn btn-primary btn-lg open-admission-modal-btn" style="padding: 1rem 2.25rem; font-size: 1.1rem; box-shadow: 0 8px 24px rgba(231,111,81,0.35); width: 100%; max-width: 340px;">
+            <i class="fa-solid fa-window-restore"></i> Open Admission Form (Popup)
+          </button>
+          
+          <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; width: 100%; font-size: 0.875rem; color: #64748b;">
+            <i class="fa-solid fa-phone" style="color:var(--accent);"></i> Helpline: <a href="tel:+919832012345" class="school-phone-text" style="color:var(--primary); font-weight:700;">+91 98320 12345</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. Training Process Steps
+       ========================================================================== -->
+  <section class="section-padding features-section" id="process">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-road"></i> Step-By-Step Journey</span>
+        <h2 class="section-title">How You Learn Driving With Us</h2>
+        <p class="section-subtitle">
+          Our certified curriculum takes you from an absolute beginner to a confident, licensed driver through systematic practical stages.
+        </p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num-badge">1</div>
+          <h3>Admission & LL</h3>
+          <p>Register online or visit our Ghoshpukur office. We prepare your Learner License application on Parivahan Sarathi.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num-badge">2</div>
+          <h3>Dual Control Basics</h3>
+          <p>Get comfortable with vehicle controls, steering posture, clutch-accelerator bite point in our dual-brake safety cars.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num-badge">3</div>
+          <h3>Traffic & Highway</h3>
+          <p>Advance to real road driving on Ghoshpukur town roads and NH 31 highway with overtaking and lane change discipline.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num-badge">4</div>
+          <h3>Track Drills & Parking</h3>
+          <p>Master parallel parking, reverse S-bend, and slope starting on our dedicated training ground poles.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num-badge">5</div>
+          <h3>RTO Trial & License</h3>
+          <p>We accompany you to the Siliguri RTO for your 8-shape & H-track driving test and ensure your permanent DL issuance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       8. Training Gallery Section
+       ========================================================================== -->
+  <section class="section-padding gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-images"></i> Real Training Moments</span>
+        <h2 class="section-title">Our Vehicles & Training Gallery</h2>
+        <p class="section-subtitle">
+          Take a look at our well-maintained dual-control vehicle fleet, spacious driving ground, and successful license-holding students.
+        </p>
+      </div>
+
+      <!-- Gallery Filter -->
+      <div class="gallery-filter-bar course-filter-bar">
+        <button class="filter-btn active" data-category="all">All Photos</button>
+        <button class="filter-btn" data-category="fleet">Training Fleet</button>
+        <button class="filter-btn" data-category="training">Practical Classes</button>
+        <button class="filter-btn" data-category="ground">Training Ground</button>
+        <button class="filter-btn" data-category="students">Successful Students</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Rendered dynamically from GMTS_DB data -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       9. Frequently Asked Questions (FAQ) Section
+       ========================================================================== -->
+  <section class="section-padding" id="faq" style="background-color:var(--bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-circle-question"></i> Clarifications</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">
+          Common queries candidates have before joining Ghoshpukur Motor Training School.
+        </p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item active">
+          <div class="faq-question">
+            <span>What is the minimum age to apply for motor driving training?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            For gearless two-wheelers (up to 50cc), the minimum age is 16 years (with parental consent). For standard light motor vehicles (Cars, Geared Motorcycles), the minimum age required by the Motor Vehicles Act is 18 years.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What documents are required for admission and Learner's License?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            You will need: (1) Aadhaar Card or Voter ID, (2) Age proof (Birth Certificate or 10th Admit Card / PAN), (3) 3 passport-sized color photographs, and (4) Medical Certificate Form 1-A (for candidates above 40 years). Our school assists with all documentation.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Are the training cars safe for absolute beginners?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Yes, 100%! All our training hatchbacks (Swift, WagonR, Alto) are government-certified dual-control vehicles equipped with secondary clutch and brake pedals on the instructor's passenger side, ensuring complete safety at all times.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can I choose my own preferred driving time slot?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Yes, we provide flexible training hours from 6:00 AM to 7:00 PM every day including Sundays. You can select an early morning, late afternoon, or weekend batch according to your office, college, or business schedule.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Do you offer ladies-only batches with female driving instructors?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Yes, Ghoshpukur Motor Training School has certified lady trainers and exclusive batches for women learners to ensure a comfortable, supportive, and stress-free driving experience.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       10. Contact & Training Ground Location Section
+       ========================================================================== -->
+  <section class="section-padding" id="contact" style="background-color:var(--bg-surface);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-compass"></i> Visit & Reach Us</span>
+        <h2 class="section-title">Get in Touch With Our Training Center</h2>
+        <p class="section-subtitle">
+          Located conveniently on the NH 31 Highway at Ghoshpukur, easily accessible from Phansidewa, Bagdogra, and Siliguri.
+        </p>
+      </div>
+
+      <div class="form-wrapper-card" style="grid-template-columns: 1fr 1fr;">
+        <div style="padding:2.5rem; background:#f8fafc;">
+          <h3 style="color:var(--primary); margin-bottom:1.5rem; font-size:1.5rem;">Contact Information</h3>
+          
+          <div style="display:flex; gap:1rem; margin-bottom:1.25rem;">
+            <div style="width:44px; height:44px; border-radius:10px; background:rgba(13,59,102,0.1); color:var(--primary); display:flex; align-items:center; justify-content:center; font-size:1.25rem; flex-shrink:0;">
+              <i class="fa-solid fa-map-location-dot"></i>
+            </div>
+            <div>
+              <strong style="display:block; margin-bottom:0.25rem;">Training Center Address</strong>
+              <p class="school-address-text" style="font-size:0.9rem; color:#64748b;">NH 31 Highway, Near Ghoshpukur Bus Stand & Toll Plaza, Ghoshpukur, Siliguri, Dist. Darjeeling, West Bengal - 734434</p>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:1rem; margin-bottom:1.25rem;">
+            <div style="width:44px; height:44px; border-radius:10px; background:rgba(13,59,102,0.1); color:var(--primary); display:flex; align-items:center; justify-content:center; font-size:1.25rem; flex-shrink:0;">
+              <i class="fa-solid fa-phone-volume"></i>
+            </div>
+            <div>
+              <strong style="display:block; margin-bottom:0.25rem;">Helpline & Inquiries</strong>
+              <p style="font-size:0.9rem; color:#64748b;">
+                <a href="tel:+919832012345" class="school-phone-link school-phone-text" style="color:var(--primary); font-weight:700;">+91 98320 12345</a> / 
+                <a href="tel:+917001234567" class="school-alt-phone-link" style="color:var(--primary); font-weight:700;">+91 70012 34567</a>
+              </p>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:1rem; margin-bottom:1.25rem;">
+            <div style="width:44px; height:44px; border-radius:10px; background:rgba(13,59,102,0.1); color:var(--primary); display:flex; align-items:center; justify-content:center; font-size:1.25rem; flex-shrink:0;">
+              <i class="fa-solid fa-clock"></i>
+            </div>
+            <div>
+              <strong style="display:block; margin-bottom:0.25rem;">Operational Hours</strong>
+              <p class="school-hours-text" style="font-size:0.9rem; color:#64748b;">Monday to Sunday: 6:00 AM – 7:00 PM</p>
+            </div>
+          </div>
+
+          <div style="margin-top:2rem;">
+            <a href="https://wa.me/919832012345" target="_blank" class="btn btn-secondary school-whatsapp-link" style="background:#25d366; border-color:#25d366;">
+              <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp Now
+            </a>
+          </div>
+        </div>
+
+        <div style="padding:2.5rem; background:white; display:flex; flex-direction:column; justify-content:center;">
+          <h4 style="color:var(--primary-dark); font-size:1.3rem; margin-bottom:1rem;">Training Areas Covered</h4>
+          <p style="color:#64748b; font-size:0.925rem; margin-bottom:1.5rem;">
+            Our trainers pick up candidates and conduct practical sessions across key surrounding regions:
+          </p>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; font-size:0.9rem; font-weight:600; color:var(--text-main);">
+            <div><i class="fa-solid fa-circle-check" style="color:var(--success);"></i> Ghoshpukur Bazar</div>
+            <div><i class="fa-solid fa-circle-check" style="color:var(--success);"></i> Phansidewa More</div>
+            <div><i class="fa-solid fa-circle-check" style="color:var(--success);"></i> NH 31 Highway Corridor</div>
+            <div><i class="fa-solid fa-circle-check" style="color:var(--success);"></i> Bidhannagar Link</div>
+            <div><i class="fa-solid fa-circle-check" style="color:var(--success);"></i> Bagdogra Airport Area</div>
+            <div><i class="fa-solid fa-circle-check" style="color:var(--success);"></i> Siliguri Medical More</div>
+          </div>
+          <div style="margin-top:2rem; background:#eff6ff; padding:1.25rem; border-radius:10px; border:1px solid #bfdbfe;">
+            <strong style="color:#1d4ed8; font-size:0.95rem; display:block; margin-bottom:0.25rem;"><i class="fa-solid fa-certificate"></i> Govt. Authorized Certificate</strong>
+            <p style="font-size:0.85rem; color:#1e40af; margin:0;">All graduates receive an authentic Motor Driving Training Certificate recognized for driving license applications across India.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       11. Footer
+       ========================================================================== -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom:1rem;">
+            <div class="logo-icon-wrapper" style="width:42px; height:42px; font-size:1.4rem;">
+              <i class="fa-solid fa-steering-wheel"></i>
+            </div>
+            <div class="brand-text">
+              <h3 style="color:white; font-size:1.2rem;" class="school-name-text">Ghoshpukur Motor Training School</h3>
+              <span style="color:var(--safety-yellow);">Govt. Reg. No: WB/DAR/MTS/2018/042</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Premier government recognized motor driving institute in Ghoshpukur, Siliguri. Providing safe, professional four-wheeler and two-wheeler driving training with dual-control modern vehicles.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#heroSliderSection"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+            <li><a href="#courses"><i class="fa-solid fa-angle-right"></i> Driving Courses</a></li>
+            <li><a href="#admission-form"><i class="fa-solid fa-angle-right"></i> Candidate Admission</a></li>
+            <li><a href="#gallery"><i class="fa-solid fa-angle-right"></i> Training Fleet</a></li>
+            <li><a href="#faq"><i class="fa-solid fa-angle-right"></i> FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Courses</h4>
+          <ul class="footer-links">
+            <li><a href="#courses"><i class="fa-solid fa-angle-right"></i> 4-Wheeler Basic</a></li>
+            <li><a href="#courses"><i class="fa-solid fa-angle-right"></i> Highway & Advance</a></li>
+            <li><a href="#courses"><i class="fa-solid fa-angle-right"></i> 2-Wheeler (Bike/Scooter)</a></li>
+            <li><a href="#courses"><i class="fa-solid fa-angle-right"></i> VIP Combo Pack</a></li>
+            <li><a href="#courses"><i class="fa-solid fa-angle-right"></i> 7-Day Refresher</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Branch Contact</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-map-marker-alt"></i>
+            <span class="school-address-text">NH 31 Highway, Ghoshpukur, Siliguri, WB - 734434</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span class="school-phone-text">+91 98320 12345</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span class="school-email-text">contact@ghoshpukurmotortraining.com</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Ghoshpukur Motor Training School. All Rights Reserved. Govt. Approved.
+        </div>
+        <div>
+          <button class="footer-admin-btn open-admin-portal-btn">
+            <i class="fa-solid fa-shield-halved"></i> Admin Access & Dashboard
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Action -->
+  <a href="https://wa.me/919832012345" target="_blank" class="floating-whatsapp school-whatsapp-link" title="Chat with Ghoshpukur Motor Training School">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- ==========================================================================
+       MODAL 0: Candidate Admission Form Popup Screen
+       ========================================================================== -->
+  <div class="modal-backdrop" id="admissionModal">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <div>
+          <h3 style="color:var(--primary); font-size:1.3rem; margin:0;">
+            <i class="fa-solid fa-id-card-clip" style="color:var(--accent);"></i> Candidate Admission & Registration Form
+          </h3>
+          <span style="font-size:0.8rem; color:#64748b;">Ghoshpukur Motor Training School (Govt. Approved) • Session 2026</span>
+        </div>
+        <button type="button" class="modal-close-btn" aria-label="Close Admission Form">&times;</button>
+      </div>
+      <div class="modal-body" style="padding: 1.5rem 2rem;">
+        <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:0.75rem 1rem; margin-bottom:1.5rem; font-size:0.85rem; color:#166534; display:flex; align-items:center; gap:0.6rem;">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Fill up the admission details below. Our batch coordinator will contact you to confirm timing & documents.</span>
+        </div>
+
+        <form id="motorTrainingAdmissionForm">
+          <!-- Section 1: Personal Details -->
+          <h4 class="form-section-heading" style="margin-top:0;"><i class="fa-solid fa-user"></i> 1. Candidate Personal Details</h4>
+          
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="applicantName">Full Name of Candidate <span class="required">*</span></label>
+              <input type="text" class="form-control" id="applicantName" placeholder="e.g. Rahul Sharma" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="applicantGuardian">Father's / Guardian's Name <span class="required">*</span></label>
+              <input type="text" class="form-control" id="applicantGuardian" placeholder="e.g. R. K. Sharma" required>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="applicantPhone">Mobile / WhatsApp Number <span class="required">*</span></label>
+              <input type="tel" class="form-control" id="applicantPhone" placeholder="10-digit mobile number" pattern="[0-9]{10}" maxlength="10" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="applicantEmail">Email Address (Optional)</label>
+              <input type="email" class="form-control" id="applicantEmail" placeholder="candidate@example.com">
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="applicantDob">Date of Birth <span class="required">*</span></label>
+              <input type="date" class="form-control" id="applicantDob" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Gender <span class="required">*</span></label>
+              <div style="display:flex; gap:1.25rem; margin-top:0.6rem;">
+                <label><input type="radio" name="applicantGender" value="Male" checked> Male</label>
+                <label><input type="radio" name="applicantGender" value="Female"> Female</label>
+                <label><input type="radio" name="applicantGender" value="Other"> Other</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2: Address -->
+          <h4 class="form-section-heading"><i class="fa-solid fa-map-pin"></i> 2. Residential Address</h4>
+          
+          <div class="form-group">
+            <label class="form-label" for="applicantAddress">Full Address / Landmark <span class="required">*</span></label>
+            <textarea class="form-control" id="applicantAddress" rows="2" placeholder="House/Village, Post Office, Landmark, Road name" required></textarea>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="applicantCity">City / Sub-Division / Area</label>
+              <input type="text" class="form-control" id="applicantCity" value="Ghoshpukur" placeholder="e.g. Ghoshpukur / Siliguri">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="applicantPincode">Pincode</label>
+              <input type="text" class="form-control" id="applicantPincode" placeholder="e.g. 734434" maxlength="6">
+            </div>
+          </div>
+
+          <!-- Section 3: Course & Training Preferences -->
+          <h4 class="form-section-heading"><i class="fa-solid fa-car-side"></i> 3. Training Preferences</h4>
+
+          <div class="form-group">
+            <label class="form-label" for="applicantCourse">Select Motor Training Course <span class="required">*</span></label>
+            <select class="form-control" id="applicantCourse" required>
+              <!-- Dynamically populated from GMTS_DB -->
+            </select>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="applicantVehicleType">Preferred Vehicle Type</label>
+              <select class="form-control" id="applicantVehicleType">
+                <option value="Manual Car (Swift / Alto)">Manual Transmission Car (Swift / Alto)</option>
+                <option value="Automatic Car (Hatchback)">Automatic Transmission Car (AMT/AT)</option>
+                <option value="Two Wheeler (Geared Motorcycle)">Two Wheeler (Geared Motorcycle)</option>
+                <option value="Two Wheeler (Scooter / Non-geared)">Two Wheeler (Scooter / Gearless)</option>
+                <option value="Both 2W + 4W (Combo)">Both Two-Wheeler + Four-Wheeler</option>
+                <option value="Commercial / Pickup / LMV-TR">Commercial / Transport Vehicle</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="applicantSlot">Preferred Batch Timing</label>
+              <select class="form-control" id="applicantSlot">
+                <option value="Early Morning (6:00 AM - 8:00 AM)">Early Morning (6:00 AM - 8:00 AM)</option>
+                <option value="Morning (8:00 AM - 11:00 AM)">Morning (8:00 AM - 11:00 AM)</option>
+                <option value="Afternoon (12:00 PM - 3:00 PM)">Afternoon (12:00 PM - 3:00 PM)</option>
+                <option value="Evening (4:00 PM - 7:00 PM)">Evening (4:00 PM - 7:00 PM)</option>
+                <option value="Weekend Special (Saturday & Sunday)">Weekend Special (Sat & Sun Only)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="applicantLicenseStatus">Learner's License (LL) Status</label>
+              <select class="form-control" id="applicantLicenseStatus">
+                <option value="Need School assistance to apply">Do not have LL yet (Need School Assistance)</option>
+                <option value="Already have Learner License">Already have valid Learner's License</option>
+                <option value="Have Driving License (Refresher Course)">Already have Driving License (Need Refresher)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="applicantIdProof">Photo ID Proof for RTO</label>
+              <select class="form-control" id="applicantIdProof">
+                <option value="Aadhaar Card">Aadhaar Card</option>
+                <option value="Voter ID Card">Voter ID Card</option>
+                <option value="Passport">Passport</option>
+                <option value="PAN Card">PAN Card</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="applicantNotes">Special Request or Comments (Optional)</label>
+            <textarea class="form-control" id="applicantNotes" rows="2" placeholder="e.g. Prefer lady instructor, pick-up from specific location, urgent license requirement, etc."></textarea>
+          </div>
+
+          <div class="form-check-group">
+            <input type="checkbox" id="termsCheck" required checked>
+            <label for="termsCheck">I declare that all information given above is true and I am medically fit for driving training as per Motor Vehicles Act.</label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer" style="display:flex; justify-content:space-between; align-items:center;">
+        <button type="button" class="btn btn-outline modal-close-btn">
+          <i class="fa-solid fa-xmark"></i> Cancel / Close
+        </button>
+        <button type="submit" form="motorTrainingAdmissionForm" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-paper-plane"></i> Submit Admission Application
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 1: Admission Success & Printable Receipt
+       ========================================================================== -->
+  <div class="modal-backdrop" id="admissionReceiptModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-circle-check" style="color:var(--success);"></i> Admission Form Submitted</h3>
+        <button type="button" class="modal-close-btn" aria-label="Close Receipt Modal">&times;</button>
+      </div>
+      <div class="modal-body" id="receiptDetails">
+        <!-- Rendered dynamically -->
+      </div>
+      <div class="modal-footer" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
+        <button type="button" class="btn btn-secondary btn-sm modal-close-btn" id="receiptCloseBtn" style="background:#475569; color:white; font-weight:600;">
+          <i class="fa-solid fa-xmark"></i> Close Window
+        </button>
+        <div style="display:flex; gap:0.5rem; align-items:center;">
+          <button type="button" class="btn btn-outline btn-sm" onclick="window.print()"><i class="fa-solid fa-print"></i> Print Receipt</button>
+          <a href="#" id="receiptWhatsAppBtn" target="_blank" class="btn btn-primary btn-sm" style="background:#25d366; border-color:#25d366;">
+            <i class="fa-brands fa-whatsapp"></i> Confirm on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 2: Lightbox Image Viewer
+       ========================================================================== -->
+  <div class="modal-backdrop lightbox-modal" id="lightboxModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" style="position:absolute; top:1rem; right:1rem; color:white; font-size:2rem; z-index:10;">&times;</button>
+      <img src="" alt="Enlarged Training Photo" id="lightboxImg" class="lightbox-img">
+      <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 3: Admin Login Modal
+       ========================================================================== -->
+  <div class="modal-backdrop" id="adminLoginModal">
+    <div class="modal-card" style="max-width:440px;">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-user-shield" style="color:var(--primary);"></i> Admin Security Login</h3>
+        <button class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:0.875rem; color:#64748b; margin-bottom:1.25rem;">
+          Sign in to manage banner pictures, driving courses, gallery photos, toggle show/hide, and review candidate applications.
+        </p>
+
+        <form id="adminLoginForm">
+          <div class="form-group">
+            <label class="form-label" for="adminUsernameInput">Username</label>
+            <input type="text" class="form-control" id="adminUsernameInput" value="admin" required placeholder="Enter username">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="adminPasswordInput">Password</label>
+            <input type="password" class="form-control" id="adminPasswordInput" value="admin123" required placeholder="Enter password">
+          </div>
+          <div id="adminLoginError" style="color:var(--danger); font-size:0.85rem; margin-bottom:1rem; display:none;"></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">
+            <i class="fa-solid fa-right-to-bracket"></i> Login to Admin Dashboard
+          </button>
+        </form>
+
+        <div style="margin-top:1.25rem; padding:0.75rem; background:#f8fafc; border-radius:8px; font-size:0.8rem; color:#64748b; text-align:center;">
+          <i class="fa-solid fa-key"></i> Default Demo Credentials: <strong>admin</strong> / <strong>admin123</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FULL ADMIN PORTAL DASHBOARD (Protected View)
+       ========================================================================== -->
+  <div class="admin-portal-modal" id="adminPortalModal">
+    <!-- Top Nav -->
+    <div class="admin-top-nav">
+      <div class="admin-logo">
+        <i class="fa-solid fa-gauge-high"></i>
+        <span>Ghoshpukur MTS — Admin Control Center</span>
+      </div>
+      <div class="admin-user-info">
+        <span style="font-size:0.875rem; color:#cbd5e1;"><i class="fa-solid fa-user"></i> Signed in as: <strong>Admin</strong></span>
+        <button class="btn btn-sm btn-outline" id="closeAdminPortalBtn" style="color:#e2e8f0; border-color:#475569;">
+          <i class="fa-solid fa-globe"></i> View Website
+        </button>
+        <button class="btn btn-sm btn-outline" id="adminLogoutBtn" style="color:#f87171; border-color:#7f1d1d;">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+        </button>
+      </div>
+    </div>
+
+    <!-- Admin Layout -->
+    <div class="admin-layout">
+      <!-- Sidebar -->
+      <aside class="admin-sidebar">
+        <div class="admin-nav-item active" data-tab="adminTabOverview">
+          <i class="fa-solid fa-chart-line"></i> Dashboard
+        </div>
+        <div class="admin-nav-item" data-tab="adminTabApplications">
+          <i class="fa-solid fa-clipboard-user"></i> Candidate Inquiries
+        </div>
+        <div class="admin-nav-item" data-tab="adminTabSlides">
+          <i class="fa-solid fa-images"></i> Slider Pictures
+        </div>
+        <div class="admin-nav-item" data-tab="adminTabCourses">
+          <i class="fa-solid fa-graduation-cap"></i> Course Details
+        </div>
+        <div class="admin-nav-item" data-tab="adminTabGallery">
+          <i class="fa-solid fa-photo-film"></i> Gallery Photos
+        </div>
+        <div class="admin-nav-item" data-tab="adminTabSettings">
+          <i class="fa-solid fa-sliders"></i> Settings & Backup
+        </div>
+      </aside>
+
+      <!-- Main Admin Content Area -->
+      <main class="admin-main">
+
+        <!-- TAB 1: OVERVIEW -->
+        <div class="admin-tab-content active" id="adminTabOverview">
+          <div class="admin-header-row">
+            <h2>School Operations Overview</h2>
+            <button class="btn btn-primary btn-sm" id="exportAppsCsvBtn">
+              <i class="fa-solid fa-file-excel"></i> Export Applications (CSV)
+            </button>
+          </div>
+
+          <!-- Stats Cards -->
+          <div class="stats-cards-grid">
+            <div class="stat-card">
+              <div class="stat-icon" style="background:#e0f2fe; color:#0369a1;">
+                <i class="fa-solid fa-users"></i>
+              </div>
+              <div>
+                <div class="stat-val" id="statTotalApplications">0</div>
+                <div class="stat-label">Total Candidate Inquiries</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon" style="background:#fef3c7; color:#b45309;">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div>
+                <div class="stat-val" id="statNewInquiries">0</div>
+                <div class="stat-label">New / Pending Follow-up</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon" style="background:#dcfce7; color:#15803d;">
+                <i class="fa-solid fa-id-card"></i>
+              </div>
+              <div>
+                <div class="stat-val" id="statEnrolled">0</div>
+                <div class="stat-label">Enrolled Candidates</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon" style="background:#ede9fe; color:#6d28d9;">
+                <i class="fa-solid fa-book-open"></i>
+              </div>
+              <div>
+                <div class="stat-val" id="statActiveCourses">0 / 0</div>
+                <div class="stat-label">Active Driving Courses</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon" style="background:#ffedd5; color:#c2410c;">
+                <i class="fa-solid fa-sliders"></i>
+              </div>
+              <div>
+                <div class="stat-val" id="statActiveSlides">0 / 0</div>
+                <div class="stat-label">Active Banner Slides</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Applications Table -->
+          <div class="data-table-card">
+            <div class="table-toolbar">
+              <h3 style="font-size:1.15rem; color:var(--primary);"><i class="fa-solid fa-clock-rotate-left"></i> Recent Candidate Applications</h3>
+              <button class="btn btn-sm btn-outline" onclick="document.querySelector('[data-tab=adminTabApplications]').click()">View All Applications</button>
+            </div>
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Ref ID</th>
+                    <th>Candidate Name</th>
+                    <th>Phone</th>
+                    <th>Selected Course</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="overviewRecentTableBody">
+                  <!-- Injected via admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: APPLICATIONS MANAGER -->
+        <div class="admin-tab-content" id="adminTabApplications">
+          <div class="admin-header-row">
+            <h2>Candidate Admission Applications</h2>
+          </div>
+
+          <div class="data-table-card">
+            <div class="table-toolbar">
+              <div class="table-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="appSearchInput" placeholder="Search by name, phone, course, ID...">
+              </div>
+
+              <div style="display:flex; gap:0.75rem; align-items:center;">
+                <label style="font-size:0.875rem; font-weight:600; color:#475569;">Status Filter:</label>
+                <select class="form-control" id="appStatusFilterSelect" style="width:160px; padding:0.4rem 0.75rem;">
+                  <option value="all">All Applications</option>
+                  <option value="New">New</option>
+                  <option value="Contacted">Contacted</option>
+                  <option value="Verified">Verified</option>
+                  <option value="Enrolled">Enrolled</option>
+                  <option value="Completed">Completed</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Application ID</th>
+                    <th>Candidate</th>
+                    <th>Contact</th>
+                    <th>Course & Timing</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="adminApplicationsTableBody">
+                  <!-- Injected via admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: SLIDER PICTURES MANAGER -->
+        <div class="admin-tab-content" id="adminTabSlides">
+          <div class="admin-header-row">
+            <div>
+              <h2>Hero Slider / Banner Pictures</h2>
+              <p style="color:#64748b; font-size:0.9rem;">Manage top homepage banners. Toggle the switch to instantly <strong>SHOW</strong> or <strong>HIDE</strong> any picture on the website.</p>
+            </div>
+            <button class="btn btn-primary" id="addSlideBtn">
+              <i class="fa-solid fa-plus"></i> Add New Slide Banner
+            </button>
+          </div>
+
+          <div class="data-table-card">
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Preview</th>
+                    <th>Slide Title & Subtitle</th>
+                    <th>Visibility (Show/Hide)</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="adminSlidesTableBody">
+                  <!-- Injected via admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 4: COURSES MANAGER -->
+        <div class="admin-tab-content" id="adminTabCourses">
+          <div class="admin-header-row">
+            <div>
+              <h2>Course Details & Fee Management</h2>
+              <p style="color:#64748b; font-size:0.9rem;">Add, edit course fees, duration, syllabus features, and toggle <strong>SHOW / HIDE</strong> for any course.</p>
+            </div>
+            <button class="btn btn-primary" id="addCourseBtn">
+              <i class="fa-solid fa-plus"></i> Add New Course
+            </button>
+          </div>
+
+          <div class="data-table-card">
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Course Title & Category</th>
+                    <th>Duration</th>
+                    <th>Fee Structure</th>
+                    <th>Visibility (Show/Hide)</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="adminCoursesTableBody">
+                  <!-- Injected via admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 5: GALLERY MANAGER -->
+        <div class="admin-tab-content" id="adminTabGallery">
+          <div class="admin-header-row">
+            <div>
+              <h2>Gallery Photos Management</h2>
+              <p style="color:#64748b; font-size:0.9rem;">Upload or link photos of training cars, driving grounds, and candidates. Toggle <strong>SHOW / HIDE</strong>.</p>
+            </div>
+            <button class="btn btn-primary" id="addGalleryBtn">
+              <i class="fa-solid fa-plus"></i> Add Photo to Gallery
+            </button>
+          </div>
+
+          <div class="data-table-card">
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Thumbnail</th>
+                    <th>Title & Caption</th>
+                    <th>Category</th>
+                    <th>Visibility (Show/Hide)</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="adminGalleryTableBody">
+                  <!-- Injected via admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 6: SETTINGS & BACKUP -->
+        <div class="admin-tab-content" id="adminTabSettings">
+          <div class="admin-header-row">
+            <h2>School Settings, Security & Data Backup</h2>
+          </div>
+
+          <div class="form-wrapper-card" style="grid-template-columns: 1.5fr 1fr; margin-bottom:2rem;">
+            <!-- School Profile Form -->
+            <div style="padding:2rem;">
+              <h4 style="color:var(--primary); margin-bottom:1.25rem;"><i class="fa-solid fa-school"></i> School Contact & Announcement Settings</h4>
+              <form id="adminSettingsForm">
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label">School Name</label>
+                    <input type="text" class="form-control" id="settingSchoolName" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Tagline</label>
+                    <input type="text" class="form-control" id="settingTagline" required>
+                  </div>
+                </div>
+
+                <div class="form-grid-3">
+                  <div class="form-group">
+                    <label class="form-label">Primary Phone</label>
+                    <input type="text" class="form-control" id="settingPhone" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Alt Phone</label>
+                    <input type="text" class="form-control" id="settingAltPhone">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">WhatsApp Number</label>
+                    <input type="text" class="form-control" id="settingWhatsApp" placeholder="e.g. 919832012345" required>
+                  </div>
+                </div>
+
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label">Contact Email</label>
+                    <input type="email" class="form-control" id="settingEmail" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Working Hours</label>
+                    <input type="text" class="form-control" id="settingHours" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">School Address</label>
+                  <input type="text" class="form-control" id="settingAddress" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Ticker Announcement Bar Text</label>
+                  <textarea class="form-control" id="settingAnnouncement" rows="2"></textarea>
+                </div>
+
+                <hr style="margin:1.5rem 0; border:0; border-top:1px solid #e2e8f0;">
+
+                <h4 style="color:var(--primary); margin-bottom:1rem;"><i class="fa-solid fa-lock"></i> Admin Credentials</h4>
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label">Admin Username</label>
+                    <input type="text" class="form-control" id="settingNewUsername" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">New Password (leave blank to keep current)</label>
+                    <input type="password" class="form-control" id="settingNewPassword" placeholder="Enter new password">
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                  <i class="fa-solid fa-floppy-disk"></i> Save School Settings & Credentials
+                </button>
+              </form>
+            </div>
+
+            <!-- Database Backup & Restore Box -->
+            <div style="background:#f8fafc; padding:2rem; border-left:1px solid #e2e8f0;">
+              <h4 style="color:var(--primary); margin-bottom:1rem;"><i class="fa-solid fa-database"></i> Database Management</h4>
+              <p style="font-size:0.875rem; color:#64748b; margin-bottom:1.25rem;">
+                All your courses, slides, candidate inquiries, and gallery photos are saved in browser storage. Export a backup anytime or restore.
+              </p>
+
+              <button class="btn btn-outline" id="backupDatabaseBtn" style="width:100%; margin-bottom:1rem;">
+                <i class="fa-solid fa-download"></i> Backup All Data (JSON)
+              </button>
+
+              <div style="margin-bottom:1.5rem;">
+                <label class="form-label" style="font-size:0.8rem;">Restore From JSON File:</label>
+                <input type="file" id="restoreDatabaseFileInput" accept=".json" class="form-control" style="font-size:0.8rem;">
+              </div>
+
+              <hr style="margin:1.5rem 0; border:0; border-top:1px solid #e2e8f0;">
+
+              <h5 style="color:#b91c1c; margin-bottom:0.5rem;"><i class="fa-solid fa-triangle-exclamation"></i> Factory Reset</h5>
+              <p style="font-size:0.8rem; color:#64748b; margin-bottom:0.75rem;">
+                Restore factory default demo courses, slider pictures, and gallery items.
+              </p>
+              <button class="btn btn-outline" id="resetDatabaseDefaultsBtn" style="color:#b91c1c; border-color:#fca5a5; width:100%;">
+                <i class="fa-solid fa-rotate-left"></i> Reset to Default Demo Data
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL: Application Candidate Details (Admin)
+       ========================================================================== -->
+  <div class="modal-backdrop" id="adminAppDetailModal">
+    <div class="modal-card" style="max-width:680px;">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-id-card"></i> Candidate Application Dossier</h3>
+        <button type="button" class="modal-close-btn" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body" id="adminAppDetailContent">
+        <!-- Injected via admin.js -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline modal-close-btn"><i class="fa-solid fa-xmark"></i> Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL: Add / Edit Slider Picture
+       ========================================================================== -->
+  <div class="modal-backdrop" id="slideFormModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="slideModalTitle">Add New Banner Slide</h3>
+        <button type="button" class="modal-close-btn" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="slideForm">
+          <input type="hidden" id="slideIdInput">
+
+          <div class="form-group">
+            <label class="form-label">Slide Main Title <span class="required">*</span></label>
+            <input type="text" class="form-control" id="slideTitleInput" placeholder="e.g. Master the Road with Confidence" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Subtitle / Description</label>
+            <textarea class="form-control" id="slideSubtitleInput" rows="2" placeholder="e.g. Dual-control modern cars and certified instructors in Ghoshpukur..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Badge Text (Optional)</label>
+            <input type="text" class="form-control" id="slideBadgeInput" placeholder="e.g. 100% Practical Training">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Image Source <span class="required">*</span></label>
+            <input type="text" class="form-control" id="slideImageUrlInput" placeholder="Paste image URL (https://...)">
+            <div style="margin-top:0.5rem;">
+              <label style="font-size:0.8rem; color:#64748b;">Or Upload Image From Computer:</label>
+              <input type="file" id="slideFileInput" accept="image/*" class="form-control" style="font-size:0.8rem;">
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label">Primary Button Text</label>
+              <input type="text" class="form-control" id="slideCtaTextInput" value="Enroll for Training">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Button Link</label>
+              <input type="text" class="form-control" id="slideCtaLinkInput" value="#admission-form">
+            </div>
+          </div>
+
+          <div class="modal-footer" style="padding:1rem 0 0 0; display:flex; justify-content:flex-end; gap:0.75rem;">
+            <button type="button" class="btn btn-outline modal-close-btn"><i class="fa-solid fa-xmark"></i> Cancel</button>
+            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Save Slide</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL: Add / Edit Course Details
+       ========================================================================== -->
+  <div class="modal-backdrop" id="courseFormModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="courseModalTitle">Add New Driving Course</h3>
+        <button type="button" class="modal-close-btn" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="courseForm">
+          <input type="hidden" id="courseIdInput">
+
+          <div class="form-group">
+            <label class="form-label">Course Title <span class="required">*</span></label>
+            <input type="text" class="form-control" id="courseTitleInput" placeholder="e.g. 4-Wheeler Basic Learner's Course" required>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label">Category</label>
+              <select class="form-control" id="courseCategoryInput">
+                <option value="4w">Four Wheeler (Car)</option>
+                <option value="2w">Two Wheeler (Bike/Scooter)</option>
+                <option value="combo">Combo Package (2W + 4W)</option>
+                <option value="refresher">Refresher (7 Days)</option>
+                <option value="commercial">Commercial / Transport</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Duration</label>
+              <input type="text" class="form-control" id="courseDurationInput" placeholder="e.g. 21 Days (Daily 40 Mins)" required>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label">Course Fee (₹) <span class="required">*</span></label>
+              <input type="number" class="form-control" id="coursePriceInput" placeholder="4500" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Original Fee (₹ Strike-through)</label>
+              <input type="number" class="form-control" id="courseOriginalPriceInput" placeholder="5500">
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label">Assigned Vehicle</label>
+              <input type="text" class="form-control" id="courseVehicleInput" placeholder="e.g. Dual Control Maruti Swift">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Special Badge (e.g. Most Popular)</label>
+              <input type="text" class="form-control" id="courseBadgeInput" placeholder="e.g. Best for Beginners">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Short Description</label>
+            <textarea class="form-control" id="courseDescInput" rows="2" placeholder="Course overview and objectives..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Syllabus / Features (One feature per line)</label>
+            <textarea class="form-control" id="courseFeaturesInput" rows="4" placeholder="Dual-Control Safety Car&#10;Clutch, Gear, Steering coordination&#10;Reverse & Parallel Parking practice&#10;RTO Track (8 & H Track) simulation"></textarea>
+          </div>
+
+          <div class="modal-footer" style="padding:1rem 0 0 0; display:flex; justify-content:flex-end; gap:0.75rem;">
+            <button type="button" class="btn btn-outline modal-close-btn"><i class="fa-solid fa-xmark"></i> Cancel</button>
+            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Save Course</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL: Add / Edit Gallery Item
+       ========================================================================== -->
+  <div class="modal-backdrop" id="galleryFormModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="galleryModalTitle">Add Photo to Gallery</h3>
+        <button type="button" class="modal-close-btn" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="galleryForm">
+          <input type="hidden" id="galleryIdInput">
+
+          <div class="form-group">
+            <label class="form-label">Photo Title <span class="required">*</span></label>
+            <input type="text" class="form-control" id="galleryTitleInput" placeholder="e.g. Training Ground Practice" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Category</label>
+            <select class="form-control" id="galleryCategoryInput">
+              <option value="fleet">Training Fleet</option>
+              <option value="training">Practical Classes</option>
+              <option value="ground">Training Ground</option>
+              <option value="students">Successful Students</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Image Source <span class="required">*</span></label>
+            <input type="text" class="form-control" id="galleryImageUrlInput" placeholder="Paste image URL (https://...)">
+            <div style="margin-top:0.5rem;">
+              <label style="font-size:0.8rem; color:#64748b;">Or Upload Photo From Computer:</label>
+              <input type="file" id="galleryFileInput" accept="image/*" class="form-control" style="font-size:0.8rem;">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Caption / Description</label>
+            <textarea class="form-control" id="galleryCaptionInput" rows="2" placeholder="Brief note about this photo..."></textarea>
+          </div>
+
+          <div class="modal-footer" style="padding:1rem 0 0 0; display:flex; justify-content:flex-end; gap:0.75rem;">
+            <button type="button" class="btn btn-outline modal-close-btn"><i class="fa-solid fa-xmark"></i> Cancel</button>
+            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Save Gallery Photo</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core JavaScript Modules -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

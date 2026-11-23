@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nayan Roy Choudhury - Resume</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 10mm 12mm;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #1e293b;
+      background-color: #ffffff;
+      line-height: 1.45;
+      font-size: 9.5pt;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .resume-wrapper {
+      width: 100%;
+      max-width: 210mm;
+      margin: 0 auto;
+    }
+
+    /* Page break helpers */
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+      padding-top: 4mm;
+    }
+
+    .avoid-break {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    /* HEADER */
+    .resume-header {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #e2e8f0;
+      margin-bottom: 0.9rem;
+    }
+
+    .header-photo-wrap {
+      width: 90px;
+      height: 90px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      padding: 3px;
+      background: linear-gradient(135deg, #f59e0b, #06b6d4);
+      box-shadow: 0 4px 12px rgba(6, 182, 212, 0.25);
+    }
+
+    .header-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      border-radius: 50%;
+      background: #0f172a;
+      display: block;
+    }
+
+    .header-info {
+      flex: 1;
+    }
+
+    .header-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20pt;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+      margin-bottom: 2px;
+    }
+
+    .header-title {
+      font-size: 10pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #0284c7;
+      margin-bottom: 6px;
+    }
+
+    .header-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.9rem;
+      font-size: 8.5pt;
+      color: #475569;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .contact-item i {
+      color: #0284c7;
+      font-size: 8pt;
+    }
+
+    /* SECTION STYLING */
+    .section {
+      margin-bottom: 0.85rem;
+    }
+
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 11pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1.5px solid #cbd5e1;
+      padding-bottom: 3px;
+      margin-bottom: 0.55rem;
+    }
+
+    .section-title i {
+      color: #0284c7;
+      font-size: 10pt;
+    }
+
+    /* EXECUTIVE SUMMARY */
+    .summary-text {
+      color: #334155;
+      font-size: 9pt;
+      line-height: 1.5;
+      text-align: justify;
+    }
+
+    /* SKILLS GRID */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+
+    .skill-col {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 0.45rem 0.65rem;
+    }
+
+    .skill-col-title {
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .skill-col-title i {
+      color: #f59e0b;
+      font-size: 8pt;
+    }
+
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+    }
+
+    .skill-pill {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      color: #334155;
+      font-size: 7.5pt;
+      font-weight: 600;
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+
+    /* EXPERIENCE TIMELINE */
+    .exp-item {
+      margin-bottom: 0.75rem;
+      position: relative;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 2px;
+    }
+
+    .exp-role {
+      font-size: 10pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .exp-badge {
+      display: inline-block;
+      font-size: 7pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 1px 6px;
+      border-radius: 10px;
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+      margin-left: 0.35rem;
+    }
+
+    .exp-company {
+      font-size: 9pt;
+      font-weight: 600;
+      color: #0284c7;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .exp-meta {
+      font-size: 8pt;
+      font-weight: 600;
+      color: #64748b;
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    .exp-desc {
+      font-size: 8.5pt;
+      color: #334155;
+      margin-top: 3px;
+      line-height: 1.45;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      margin-top: 3px;
+      padding-left: 0;
+    }
+
+    .exp-bullets li {
+      position: relative;
+      padding-left: 14px;
+      font-size: 8.5pt;
+      color: #334155;
+      line-height: 1.45;
+      margin-bottom: 2px;
+    }
+
+    .exp-bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 2px;
+      color: #0284c7;
+      font-weight: bold;
+      font-size: 11pt;
+      line-height: 1;
+    }
+
+    /* SOFTYNEX PROJECT MINI-CARDS */
+    .softynex-projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.35rem 0.6rem;
+      margin: 0.35rem 0;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 0.45rem 0.65rem;
+    }
+
+    .softynex-proj-item {
+      font-size: 8pt;
+      line-height: 1.35;
+      color: #334155;
+    }
+
+    .softynex-proj-name {
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .softynex-proj-name i {
+      color: #0284c7;
+      font-size: 7.5pt;
+    }
+
+    /* EDUCATION GRID */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+
+    .edu-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 0.5rem 0.65rem;
+    }
+
+    .edu-degree {
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.25;
+      margin-bottom: 2px;
+    }
+
+    .edu-inst {
+      font-size: 8pt;
+      font-weight: 600;
+      color: #0284c7;
+      margin-bottom: 2px;
+    }
+
+    .edu-year {
+      font-size: 7.5pt;
+      color: #64748b;
+      margin-bottom: 2px;
+    }
+
+    .edu-score {
+      font-size: 7.5pt;
+      font-weight: 700;
+      color: #059669;
+    }
+
+    /* TWO COLUMN BOTTOM SECTION */
+    .bottom-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8.5pt;
+    }
+
+    .info-table td {
+      padding: 2.5px 0;
+      vertical-align: top;
+    }
+
+    .info-label {
+      font-weight: 600;
+      color: #64748b;
+      width: 40%;
+    }
+
+    .info-val {
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    /* DECLARATION */
+    .declaration-box {
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: 6px;
+      padding: 0.5rem 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .declaration-quote {
+      font-size: 8pt;
+      font-style: italic;
+      color: #475569;
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+    }
+
+    .sig-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 8pt;
+      color: #64748b;
+    }
+
+    .sig-name {
+      font-weight: 700;
+      color: #0f172a;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="resume-wrapper">
+
+    <!-- HEADER -->
+    <header class="resume-header">
+      <div class="header-photo-wrap">
+        <img src="assets/nayan_photo.jpg" alt="Nayan Roy Choudhury" class="header-photo">
+      </div>
+      <div class="header-info">
+        <h1 class="header-name">NAYAN ROY CHOUDHURY</h1>
+        <div class="header-title">Project Coordinator & Operations Executive</div>
+        <div class="header-contacts">
+          <span class="contact-item"><i class="fa-solid fa-phone"></i> +91 8768081380</span>
+          <span class="contact-item"><i class="fa-solid fa-envelope"></i> nayanroychoudhury9@gmail.com</span>
+          <span class="contact-item"><i class="fa-solid fa-location-dot"></i> Siliguri, West Bengal – 734012</span>
+          <span class="contact-item"><i class="fa-solid fa-flag"></i> Indian</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- EXECUTIVE PROFILE -->
+    <section class="section">
+      <h2 class="section-title"><i class="fa-solid fa-user-tie"></i> Professional Profile</h2>
+      <p class="summary-text">
+        Dynamic and results-driven professional currently serving as <strong>Project Coordinator</strong> at <strong>Softynex OPC Pvt. Ltd.</strong>, driving end-to-end software delivery across flagship SaaS and enterprise applications including <strong>HRMS, Hotel &amp; Restaurant Billing (POS), Billnex, Task Management, and SRMS</strong>. Proven versatility bridging client business requirements with cross-functional development teams, supported by extensive background in <strong>Industrial Tea Factory Dispatch &amp; Logistics</strong> at Sanyasihat Tea Processing (Mjb Group), residential <strong>Real Estate Sales &amp; Legal Agreement Drafting</strong> at Embee Delight, and international maritime technical ratings.
+      </p>
+    </section>
+
+    <!-- CORE COMPETENCIES -->
+    <section class="section">
+      <h2 class="section-title"><i class="fa-solid fa-cubes"></i> Core Competencies &amp; Technical Skills</h2>
+      <div class="skills-grid">
+        
+        <div class="skill-col">
+          <div class="skill-col-title"><i class="fa-solid fa-diagram-project"></i> Project &amp; Tech Management</div>
+          <div class="skill-pills">
+            <span class="skill-pill">Sprint Planning</span>
+            <span class="skill-pill">Milestone Tracking</span>
+            <span class="skill-pill">Client Requirement Specs</span>
+            <span class="skill-pill">UAT &amp; QA Coordination</span>
+            <span class="skill-pill">Product Walkthrough Demos</span>
+            <span class="skill-pill">Cross-Functional Leadership</span>
+          </div>
+        </div>
+
+        <div class="skill-col">
+          <div class="skill-col-title"><i class="fa-solid fa-laptop-code"></i> Software Platforms Mastered</div>
+          <div class="skill-pills">
+            <span class="skill-pill">HRMS (Payroll &amp; Biometric)</span>
+            <span class="skill-pill">Hotel &amp; Restaurant POS</span>
+            <span class="skill-pill">Billnex Retail Billing</span>
+            <span class="skill-pill">Task Management System</span>
+            <span class="skill-pill">SRMS (Student Resource)</span>
+            <span class="skill-pill">GST Billing &amp; Invoicing</span>
+          </div>
+        </div>
+
+        <div class="skill-col">
+          <div class="skill-col-title"><i class="fa-solid fa-truck-ramp-box"></i> Operations &amp; Commercial Acumen</div>
+          <div class="skill-pills">
+            <span class="skill-pill">Factory Dispatch Logistics</span>
+            <span class="skill-pill">E-Way Bills &amp; Tax Invoices</span>
+            <span class="skill-pill">Stock &amp; Batch Control</span>
+            <span class="skill-pill">Real Estate Sales Agreements</span>
+            <span class="skill-pill">High-Value Client Relations</span>
+            <span class="skill-pill">Maritime Safety Compliance</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROFESSIONAL EXPERIENCE -->
+    <section class="section">
+      <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Professional Experience</h2>
+
+      <!-- Role 1: Softynex OPC Pvt Ltd -->
+      <div class="exp-item avoid-break">
+        <div class="exp-header">
+          <div>
+            <span class="exp-role">Project Coordinator</span>
+            <span class="exp-badge">Current Position</span>
+            <div class="exp-company"><i class="fa-solid fa-building"></i> Softynex OPC Pvt. Ltd.</div>
+          </div>
+          <div class="exp-meta">
+            <div>Ongoing / Active Role</div>
+            <div>Siliguri, West Bengal</div>
+          </div>
+        </div>
+        <p class="exp-desc">
+          Managing end-to-end product delivery lifecycles, cross-functional engineering coordination, client requirement analysis, and feature deployment across key software products:
+        </p>
+
+        <!-- Softynex Projects Highlight Box -->
+        <div class="softynex-projects">
+          <div class="softynex-proj-item">
+            <div class="softynex-proj-name"><i class="fa-solid fa-users-gear"></i> HRMS (Human Resource Management)</div>
+            <div>Coordinated modules for biometric attendance, payroll automation, leave management, and employee records.</div>
+          </div>
+          <div class="softynex-proj-item">
+            <div class="softynex-proj-name"><i class="fa-solid fa-utensils"></i> Hotel &amp; Restaurant Billing POS</div>
+            <div>Led dining &amp; takeaway billing, KOT kitchen sync, table reservations, recipe inventory, and Tally integration.</div>
+          </div>
+          <div class="softynex-proj-item">
+            <div class="softynex-proj-name"><i class="fa-solid fa-file-invoice-dollar"></i> Billnex (Multi-Business Billing)</div>
+            <div>Supervised feature roadmapping for fast barcode billing, GST compliance, receipt printing, and customer ledgers.</div>
+          </div>
+          <div class="softynex-proj-item">
+            <div class="softynex-proj-name"><i class="fa-solid fa-list-check"></i> Task Management System</div>
+            <div>Engineered agile team task distribution, priority pipelines, deadline alerts, and milestone velocity tracking.</div>
+          </div>
+          <div class="softynex-proj-item" style="grid-column: span 2;">
+            <div class="softynex-proj-name"><i class="fa-solid fa-graduation-cap"></i> SRMS (Student Resource Management System)</div>
+            <div>Coordinated student admission workflows, fee collection ledgers, exam marksheet automation, and parent updates.</div>
+          </div>
+        </div>
+
+        <ul class="exp-bullets">
+          <li><strong>Sprint &amp; Milestone Coordination:</strong> Align software developers and QA testers to ensure on-time delivery of sprint backlogs and platform releases.</li>
+          <li><strong>Client Requirement Analysis &amp; Demos:</strong> Gather business requirements directly from clients, translate them into actionable tickets, and lead client onboarding demos.</li>
+          <li><strong>Quality Assurance &amp; UAT:</strong> Perform user acceptance testing across edge cases, report UI/functional anomalies, and verify bug resolution before client handover.</li>
+        </ul>
+      </div>
+
+      <!-- Role 2: Dispatch Head - Tea Factory -->
+      <div class="exp-item avoid-break">
+        <div class="exp-header">
+          <div>
+            <span class="exp-role">Dispatch Head – Tea Factory</span>
+            <div class="exp-company"><i class="fa-solid fa-industry"></i> Sanyasihat Tea Processing Pvt. Ltd. (Mjb Group)</div>
+          </div>
+          <div class="exp-meta">
+            <div>Siliguri / North Bengal</div>
+          </div>
+        </div>
+        <ul class="exp-bullets">
+          <li><strong>Industrial Dispatch Management:</strong> Coordinated manufacturing floor supervisors, packaging teams, and regional freight logistics for bulk tea consignments.</li>
+          <li><strong>Stock &amp; Inventory Maintenance:</strong> Managed warehouse stocks, balanced finished goods ledgers, and minimized storage wastage.</li>
+          <li><strong>Compliance Documentation:</strong> Issued statutory tax invoices, GST documentation, and electronic Way Bills (E-Way Bills) ensuring 100% compliance.</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- PAGE BREAK FOR CLEAN 2-PAGE SPREAD -->
+    <div class="page-break"></div>
+
+    <!-- EXPERIENCE CONTINUED -->
+    <section class="section">
+      <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Professional Experience (Continued)</h2>
+
+      <!-- Role 3: Real Estate Executive -->
+      <div class="exp-item avoid-break">
+        <div class="exp-header">
+          <div>
+            <span class="exp-role">Real Estate Executive</span>
+            <div class="exp-company"><i class="fa-solid fa-city"></i> Mjb Group • Project: Embee Delight</div>
+          </div>
+          <div class="exp-meta">
+            <div>09/2022 – 06/2025</div>
+            <div>Siliguri, West Bengal</div>
+          </div>
+        </div>
+        <ul class="exp-bullets">
+          <li><strong>Client Relationship Building:</strong> Guided home buyers and commercial investors through premium property purchases, closing high-value sales.</li>
+          <li><strong>Sales Agreement Drafting:</strong> Prepared legal sales agreements, booking applications, and statutory property handover dossiers.</li>
+          <li><strong>Dedicated After-Sales Service:</strong> Managed customer queries, documentation support, and ongoing relationship management to secure repeat referrals.</li>
+          <li><strong>Promotions &amp; Marketing:</strong> Spearheaded digital marketing and social media campaigns driving footfall to site office.</li>
+        </ul>
+      </div>
+
+      <!-- Role 4: B.P.O Specialist -->
+      <div class="exp-item avoid-break">
+        <div class="exp-header">
+          <div>
+            <span class="exp-role">B.P.O Specialist</span>
+            <div class="exp-company"><i class="fa-solid fa-headset"></i> P.P Enterprise, Webel I.T Park</div>
+          </div>
+          <div class="exp-meta">
+            <div>03/2020 – 01/2021</div>
+            <div>Siliguri, West Bengal</div>
+          </div>
+        </div>
+        <ul class="exp-bullets">
+          <li><strong>Client Problem Resolution:</strong> Resolved incoming customer inquiries, analyzed technical queries, and maintained high customer satisfaction ratings.</li>
+          <li><strong>Product Presentations:</strong> Delivered walkthrough presentations highlighting software features and conversion funnels.</li>
+        </ul>
+      </div>
+
+      <!-- Role 5: Marine Engine Rating -->
+      <div class="exp-item avoid-break">
+        <div class="exp-header">
+          <div>
+            <span class="exp-role">Engine Rating (GP Rating)</span>
+            <div class="exp-company"><i class="fa-solid fa-ship"></i> Maral Dariya Commercial Vessel</div>
+          </div>
+          <div class="exp-meta">
+            <div>01/2018 – 05/2019</div>
+            <div>Iran / International Waters</div>
+          </div>
+        </div>
+        <ul class="exp-bullets">
+          <li><strong>Engine Room Operations:</strong> Executed scheduled maintenance, monitoring, and mechanical troubleshooting adhering to international SOLAS maritime safety standards.</li>
+          <li><strong>Multinational Teamwork:</strong> Collaborated with multinational vessel crews under demanding offshore marine conditions.</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section avoid-break">
+      <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education &amp; Maritime Training</h2>
+      <div class="edu-grid">
+        
+        <div class="edu-card">
+          <div class="edu-degree">Diploma in G P Rating</div>
+          <div class="edu-inst">Global Maritime Academy</div>
+          <div class="edu-year">01/2017 – 01/2018 | Dehradun, UK</div>
+          <div class="edu-score"><i class="fa-solid fa-certificate"></i> Certified Maritime Rating</div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-degree">Higher Secondary (12th Standard)</div>
+          <div class="edu-inst">Margaret S.N School, Siliguri</div>
+          <div class="edu-year">01/2015 – 01/2016 | Siliguri, WB</div>
+          <div class="edu-score">Board: W.B.C.H.S.E • GPA: 63%</div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-degree">Secondary Education (10th Standard)</div>
+          <div class="edu-inst">Margaret S.N School, Siliguri</div>
+          <div class="edu-year">01/2013 – 01/2014 | Siliguri, WB</div>
+          <div class="edu-score">Board: W.B.S.E • GPA: 67%</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TWO COLUMN: PERSONAL DETAILS & LANGUAGES -->
+    <div class="bottom-cols avoid-break">
+      
+      <!-- Languages -->
+      <section class="section">
+        <h2 class="section-title"><i class="fa-solid fa-language"></i> Languages Known</h2>
+        <table class="info-table">
+          <tr>
+            <td class="info-label">Bengali:</td>
+            <td class="info-val">Native / Fluent (Mother Tongue)</td>
+          </tr>
+          <tr>
+            <td class="info-label">Hindi:</td>
+            <td class="info-val">Proficient / Fluent (C2 Level)</td>
+          </tr>
+          <tr>
+            <td class="info-label">English:</td>
+            <td class="info-val">Working / Functional (A2 Level)</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- Personal Info -->
+      <section class="section">
+        <h2 class="section-title"><i class="fa-solid fa-id-card"></i> Personal Details</h2>
+        <table class="info-table">
+          <tr>
+            <td class="info-label">Date of Birth:</td>
+            <td class="info-val">22nd November 1998</td>
+          </tr>
+          <tr>
+            <td class="info-label">Father's Name:</td>
+            <td class="info-val">Kalyan Roy Choudhury</td>
+          </tr>
+          <tr>
+            <td class="info-label">Nationality:</td>
+            <td class="info-val">Indian</td>
+          </tr>
+          <tr>
+            <td class="info-label">Marital Status:</td>
+            <td class="info-val">Unmarried</td>
+          </tr>
+        </table>
+      </section>
+
+    </div>
+
+    <!-- DECLARATION & SIGNATURE -->
+    <div class="declaration-box avoid-break">
+      <div class="declaration-quote">
+        "I do hereby declare that all the information furnished above is true, complete and correct to the best of my knowledge and belief."
+      </div>
+      <div class="sig-row">
+        <div>
+          <div><strong>Place:</strong> Siliguri, West Bengal</div>
+          <div><strong>Date:</strong> 23rd November 2026</div>
+        </div>
+        <div style="text-align: right;">
+          <div class="sig-name">NAYAN ROY CHOUDHURY</div>
+          <div>(Signature of Candidate)</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

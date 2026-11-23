@@ -1,0 +1,393 @@
+/* Merged & Highlighted Key Points Full-Environment 1080x1350 Poster CSS */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary-purple: #231254;
+  --accent-pink: #e6287c;
+  --cyan-shadow: #2f80ed;
+  --highlight-cyan: #38bdf8;
+  --highlight-yellow: #facc15;
+  --highlight-green: #10b981;
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 1080px;
+  height: 1350px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #ffffff;
+  font-family: var(--font-body);
+  color: #1e1338;
+  -webkit-font-smoothing: antialiased;
+}
+
+.poster-canvas {
+  width: 1080px;
+  height: 1350px;
+  position: relative;
+  background: #ffffff;
+  background-image: 
+    radial-gradient(circle at 95% 8%, rgba(216, 180, 254, 0.45) 0%, rgba(243, 232, 255, 0.2) 35%, transparent 60%),
+    radial-gradient(circle at 5% 95%, rgba(244, 114, 182, 0.15) 0%, transparent 45%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 52px 30px 52px;
+}
+
+.orb-1 {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, rgba(168, 85, 247, 0.2) 50%, transparent 70%);
+  filter: blur(45px);
+  pointer-events: none;
+}
+
+/* Header */
+.poster-header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.poster-logo {
+  height: 54px;
+  width: auto;
+}
+
+.poster-header-right {
+  border-left: 2px solid rgba(82, 71, 101, 0.35);
+  padding-left: 16px;
+  text-align: right;
+}
+
+.header-tagline {
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--primary-purple);
+  letter-spacing: 2px;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+/* Hero Section */
+.poster-hero {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 16px;
+}
+
+.poster-title {
+  font-family: var(--font-heading);
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--primary-purple);
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+.poster-title .pink-accent {
+  color: var(--accent-pink);
+  display: inline-block;
+}
+
+.poster-subhead {
+  font-size: 19px;
+  font-weight: 500;
+  color: #2b1752;
+  line-height: 1.35;
+  max-width: 900px;
+}
+
+/* ===================================================
+   MASSIVE FULL-ENVIRONMENT STAGE (Merged with Picture)
+   =================================================== */
+.environment-stage-merged {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 740px;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 
+    0 25px 60px rgba(35, 18, 84, 0.22),
+    0 8px 25px rgba(230, 40, 124, 0.18);
+  border: 2.5px solid rgba(255, 255, 255, 0.95);
+  background: #150c2a;
+}
+
+.environment-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Subtle dark gradient overlay to make text & badges stand out */
+.environment-stage-merged::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 7, 30, 0.25) 0%,
+    rgba(15, 7, 30, 0.1) 40%,
+    rgba(15, 7, 30, 0.45) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ===================================================
+   HIGHLIGHTED KEY POINTS MERGED DIRECTLY OVER PICTURE
+   =================================================== */
+.env-points-container {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 6;
+  max-width: 440px;
+}
+
+.highlight-point-badge {
+  background: rgba(18, 9, 38, 0.92);
+  backdrop-filter: blur(16px);
+  border: 2px solid rgba(230, 40, 124, 0.75);
+  border-radius: 16px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 
+    0 12px 30px rgba(0, 0, 0, 0.5),
+    0 0 16px rgba(230, 40, 124, 0.28);
+  transition: transform 0.2s ease;
+}
+
+.point-icon-box {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #e6287c, #9333ea);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(230, 40, 124, 0.4);
+}
+
+.point-icon-box.cyan-theme {
+  background: linear-gradient(135deg, #0284c7, #2563eb);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4);
+}
+
+.point-icon-box svg {
+  width: 26px;
+  height: 26px;
+  stroke-width: 2.2;
+}
+
+.point-content {
+  flex: 1;
+}
+
+.point-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.point-title .highlight-text {
+  color: var(--highlight-cyan);
+}
+
+.point-desc {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin-top: 2px;
+  line-height: 1.25;
+}
+
+.point-check-pill {
+  background: #10b981;
+  color: white;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+  white-space: nowrap;
+}
+
+/* Floating Live Metrics Badges Over Picture */
+.env-live-badge-right {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 6;
+  background: rgba(18, 9, 38, 0.92);
+  backdrop-filter: blur(14px);
+  border: 2px solid rgba(56, 189, 248, 0.65);
+  border-radius: 16px;
+  padding: 14px 20px;
+  color: white;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 14px rgba(56, 189, 248, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.env-live-badge-bottom {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  z-index: 6;
+  background: rgba(18, 9, 38, 0.94);
+  backdrop-filter: blur(14px);
+  border: 2px solid rgba(16, 185, 129, 0.7);
+  border-radius: 16px;
+  padding: 12px 20px;
+  color: white;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 14px rgba(16, 185, 129, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.live-badge-title {
+  font-family: var(--font-heading);
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #f472b6;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.live-badge-val {
+  font-size: 16.5px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-top: 1px;
+}
+
+/* Bottom Bar (CTA + Direct Contacts) */
+.poster-bottom-bar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid rgba(147, 51, 234, 0.18);
+  padding-top: 16px;
+  margin-top: 10px;
+}
+
+.btn-book-demo-3d {
+  display: inline-block;
+  background: var(--accent-pink);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 12px 30px;
+  border-radius: 6px;
+  text-decoration: none;
+  box-shadow: 5px 5px 0px var(--cyan-shadow);
+  border: none;
+}
+
+.bottom-contacts {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.contact-phone-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.phone-icon-square {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--accent-pink);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-icon-square svg {
+  width: 16px;
+  height: 16px;
+}
+
+.phone-text-val {
+  font-family: var(--font-heading);
+  font-size: 21px;
+  font-weight: 900;
+  color: var(--primary-purple);
+  letter-spacing: 0.5px;
+}
+
+.contact-address-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: right;
+}
+
+.address-web-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--primary-purple);
+}
+
+.address-loc-row {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #5b4f73;
+  max-width: 340px;
+  line-height: 1.25;
+}

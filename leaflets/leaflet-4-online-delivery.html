@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Softynex - Online Delivery & Aggregator Leaflet</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <style>
+    .aggregator-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .aggregator-card {
+      background: white;
+      border-radius: 12px;
+      padding: 10px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      border: 1px solid #e2e8f0;
+    }
+    .agg-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 13px;
+    }
+    .swiggy-tag {
+      background: #fc8019;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 10px;
+      font-weight: 900;
+    }
+    .zomato-tag {
+      background: #cb202d;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 10px;
+      font-weight: 900;
+    }
+    .dinein-tag {
+      background: #2e1065;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 10px;
+      font-weight: 900;
+    }
+    .live-status {
+      font-size: 11px;
+      font-weight: 700;
+      color: #10b981;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .toggle-ui {
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 10px;
+      font-weight: 800;
+    }
+    .sync-summary-banner {
+      background: linear-gradient(135deg, #1e1338, #3b1464);
+      border-radius: 12px;
+      padding: 12px;
+      color: white;
+      text-align: center;
+    }
+    .sync-stat-row {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 8px;
+    }
+    .stat-val {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 900;
+      color: #f472b6;
+    }
+    .stat-lbl {
+      font-size: 10px;
+      color: #cbd5e1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="leaflet-page">
+    <div class="bg-ambient-blob"></div>
+    <div class="bg-ambient-blob-2"></div>
+
+    <!-- HEADER -->
+    <header class="leaflet-header">
+      <div class="brand-left">
+        <img src="../assets/logo.svg" alt="Softynex Logo" class="brand-logo-img">
+      </div>
+      <div class="brand-right-badge">
+        <div class="badge-tag-line">RESTAURANT<br>MANAGEMENT<br>SYSTEM</div>
+      </div>
+    </header>
+
+    <!-- HERO HEADLINE -->
+    <section class="leaflet-hero">
+      <h1 class="hero-title">
+        SWIGGY. ZOMATO.<br>
+        DINE-IN.<br>
+        <span class="highlight-pink">ALL IN ONE SCREEN.</span>
+      </h1>
+      <p class="hero-subhead">
+        Stop juggling multiple tablets and missing orders. Accept Swiggy, Zomato, Takeaway, and Dine-in orders straight into a unified Softynex dashboard.
+      </p>
+    </section>
+
+    <!-- CONTENT BODY: FEATURES + 3D/UI HERO -->
+    <div class="leaflet-body">
+      <!-- Left: Feature Stack -->
+      <div class="features-stack">
+        <!-- Feature 1 -->
+        <div class="feature-pill">
+          <div class="feature-icon-box">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+          </div>
+          <div class="feature-text-group">
+            <div class="feature-title">Auto-Accept & KOT Sync</div>
+            <div class="feature-desc">Online orders route directly to your kitchen printer in under 3 seconds.</div>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-pill">
+          <div class="feature-icon-box purple-theme">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+            </svg>
+          </div>
+          <div class="feature-text-group">
+            <div class="feature-title">Single Menu Controller</div>
+            <div class="feature-desc">Turn out-of-stock items ON/OFF across both platforms simultaneously.</div>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-pill">
+          <div class="feature-icon-box">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <div class="feature-text-group">
+            <div class="feature-title">Consolidated P&L Reports</div>
+            <div class="feature-desc">Clear comparison of platform commission, net payouts, and delivery margins.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Visual Display -->
+      <div class="visual-container">
+        <div class="visual-card-frame">
+          <div class="aggregator-grid">
+            <div class="aggregator-card">
+              <div class="agg-brand">
+                <span class="swiggy-tag">SWIGGY</span>
+                <span style="font-size:12px; color:#1e1338;">Order #SW-902</span>
+              </div>
+              <span class="live-status">● Auto-Accepted</span>
+            </div>
+
+            <div class="aggregator-card">
+              <div class="agg-brand">
+                <span class="zomato-tag">ZOMATO</span>
+                <span style="font-size:12px; color:#1e1338;">Order #ZM-431</span>
+              </div>
+              <span class="live-status">● Auto-Accepted</span>
+            </div>
+
+            <div class="aggregator-card">
+              <div class="agg-brand">
+                <span class="dinein-tag">DINE-IN</span>
+                <span style="font-size:12px; color:#1e1338;">Table #12</span>
+              </div>
+              <span class="toggle-ui">Serving Now</span>
+            </div>
+
+            <div class="sync-summary-banner">
+              <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Today's Live Orders</div>
+              <div class="sync-stat-row">
+                <div>
+                  <div class="stat-val">68</div>
+                  <div class="stat-lbl">Swiggy</div>
+                </div>
+                <div>
+                  <div class="stat-val">54</div>
+                  <div class="stat-lbl">Zomato</div>
+                </div>
+                <div>
+                  <div class="stat-val">92</div>
+                  <div class="stat-lbl">Dine-In</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-wrapper">
+      <a href="tel:+919093500450" class="btn-book-demo">BOOK A DEMO</a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="leaflet-footer">
+      <div class="footer-col-left">
+        <div class="footer-lead">READY TO RUN SMARTER?</div>
+        <a href="tel:+919093500450" class="phone-link-card">
+          <div class="phone-icon-box">
+            <svg fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"/>
+            </svg>
+          </div>
+          <span class="phone-number">+91 9093500450</span>
+        </a>
+      </div>
+
+      <div class="footer-col-right">
+        <div class="footer-info-row">
+          <div class="footer-icon-circle">
+            <svg fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4.083 9h11.834a8 8 0 10-11.834 0zm11.834 2H4.083a8 8 0 1011.834 0zM10 2a8 8 0 00-8 8c0 4.418 3.582 8 8 8s8-3.582 8-8a8 8 0 00-8-8z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <a href="https://www.softynex.in" target="_blank">www.softynex.in</a>
+        </div>
+        <div class="footer-info-row">
+          <div class="footer-icon-circle">
+            <svg fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <div class="footer-address">
+            Opp. Lane of Baghajatin Park Main Gate, College Para, Siliguri - 734001
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
