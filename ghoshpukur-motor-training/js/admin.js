@@ -147,10 +147,8 @@ function handleTabLoaded(tabId) {
 
 function refreshAdminDashboard() {
   renderDashboardOverview();
-  renderAdminApplications();
-  renderAdminSlides();
-  renderAdminCourses();
-  renderAdminGallery();
+  const activeTab = document.querySelector('.admin-tab-content.active');
+  if (activeTab) handleTabLoaded(activeTab.id);
 }
 
 /* ==========================================================================
@@ -213,24 +211,106 @@ function renderDashboardOverview() {
    4. Candidate Applications Manager
    ========================================================================== */
 let appStatusFilter = 'all';
+let appCourseFilter = 'all';
+let appSortOrder = 'newest';
 let appSearchKeyword = '';
+let appDatePreset = 'all';
+let appDateFrom = '';
+let appDateTo = '';
+
+function matchesDateFilter(appliedDate) {
+  if (appDatePreset === 'all') return true;
+  if (!appliedDate) return false;
+
+  const d = new Date(appliedDate);
+  if (isNaN(d.getTime())) return false;
+
+  const now = new Date();
+  const pad = (n) => String(n).padStart(2, '0');
+  const toDateString = (date) => `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+
+  const appDateStr = toDateString(d);
+  const todayStr = toDateString(now);
+
+  if (appDatePreset === 'today') {
+    return appDateStr === todayStr;
+  }
+  if (appDatePreset === 'yesterday') {
+    const yesterday = new Date(now);
+    yesterday.setDate(yesterday.getDate() - 1);
+    return appDateStr === toDateString(yesterday);
+  }
+  if (appDatePreset === 'last7') {
+    const sevenDaysAgo = new Date(now);
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 6);
+    const startStr = toDateString(sevenDaysAgo);
+    return appDateStr >= startStr && appDateStr <= todayStr;
+  }
+  if (appDatePreset === 'thisMonth') {
+    return appDateStr.slice(0, 7) === todayStr.slice(0, 7);
+  }
+  if (appDatePreset === 'custom') {
+    if (appDateFrom && appDateStr < appDateFrom) return false;
+    if (appDateTo && appDateStr > appDateTo) return false;
+    return true;
+  }
+  return true;
+}
+
+function populateAppCourseFilter() {
+  const courseSelect = document.getElementById('appCourseFilterSelect');
+  if (!courseSelect) return;
+  const currentVal = courseSelect.value || appCourseFilter;
+  const courses = GMTS_DB.getCourses();
+  
+  // Set of courses
+  const courseTitles = new Set();
+  courses.forEach(c => { if (c.title) courseTitles.add(c.title); });
+  GMTS_DB.getApplications().forEach(a => { if (a.courseTitle) courseTitles.add(a.courseTitle); });
+  
+  courseSelect.innerHTML = '<option value="all">All Courses</option>';
+  Array.from(courseTitles).sort().forEach(title => {
+    const opt = document.createElement('option');
+    opt.value = title;
+    opt.textContent = title;
+    if (title === currentVal) opt.selected = true;
+    courseSelect.appendChild(opt);
+  });
+}
 
 function renderAdminApplications() {
   const tableBody = document.getElementById('adminApplicationsTableBody');
   if (!tableBody) return;
 
+  populateAppCourseFilter();
+
   const applications = GMTS_DB.getApplications();
+  const searchKeyword = appSearchKeyword.toLowerCase();
 
   // Filter & Search
   let filtered = applications.filter(app => {
-    const matchesStatus = appStatusFilter === 'all' || app.status.toLowerCase() === appStatusFilter.toLowerCase();
-    const matchesSearch = !appSearchKeyword || 
-      app.fullName.toLowerCase().includes(appSearchKeyword.toLowerCase()) ||
-      app.phone.includes(appSearchKeyword) ||
-      app.id.toLowerCase().includes(appSearchKeyword.toLowerCase()) ||
-      (app.courseTitle && app.courseTitle.toLowerCase().includes(appSearchKeyword.toLowerCase()));
-    return matchesStatus && matchesSearch;
+    const status = (app.status || '').toLowerCase();
+    const courseTitle = (app.courseTitle || '').toLowerCase();
+    const matchesStatus = appStatusFilter === 'all' || status === appStatusFilter.toLowerCase();
+    const matchesCourse = appCourseFilter === 'all' || courseTitle.includes(appCourseFilter.toLowerCase());
+    const matchesDate = matchesDateFilter(app.appliedDate);
+    const matchesSearch = !searchKeyword ||
+      (app.fullName || '').toLowerCase().includes(searchKeyword) ||
+      (app.phone || '').includes(searchKeyword) ||
+      (app.id || '').toLowerCase().includes(searchKeyword) ||
+      courseTitle.includes(searchKeyword) ||
+      (app.email || '').toLowerCase().includes(searchKeyword);
+    return matchesStatus && matchesCourse && matchesDate && matchesSearch;
   });
+
+  // Sort
+  if (appSortOrder === 'newest') {
+    filtered.sort((a, b) => new Date(b.appliedDate || 0) - new Date(a.appliedDate || 0));
+  } else if (appSortOrder === 'oldest') {
+    filtered.sort((a, b) => new Date(a.appliedDate || 0) - new Date(b.appliedDate || 0));
+  } else if (appSortOrder === 'name') {
+    filtered.sort((a, b) => (a.fullName || '').localeCompare(b.fullName || ''));
+  }
 
   if (filtered.length === 0) {
     tableBody.innerHTML = `
@@ -411,21 +491,40 @@ function openApplicationDetailsModal(appId) {
   modal.classList.add('open');
 }
 
-// Export Applications to CSV
-function exportApplicationsCSV() {
-  const apps = GMTS_DB.getApplications();
+// Export Applications to CSV (supports exporting filtered view or all records)
+function exportApplicationsCSV(exportFilteredOnly = true) {
+  const allApps = GMTS_DB.getApplications();
+  let apps = allApps;
+
+  const isFiltered = appStatusFilter !== 'all' || appCourseFilter !== 'all' || appSearchKeyword || appDatePreset !== 'all';
+
+  if (exportFilteredOnly && isFiltered) {
+    apps = allApps.filter(app => {
+      const matchesStatus = appStatusFilter === 'all' || app.status.toLowerCase() === appStatusFilter.toLowerCase();
+      const matchesCourse = appCourseFilter === 'all' || (app.courseTitle && app.courseTitle.toLowerCase().includes(appCourseFilter.toLowerCase()));
+      const matchesDate = matchesDateFilter(app.appliedDate);
+      const matchesSearch = !appSearchKeyword || 
+        app.fullName.toLowerCase().includes(appSearchKeyword.toLowerCase()) ||
+        app.phone.includes(appSearchKeyword) ||
+        app.id.toLowerCase().includes(appSearchKeyword.toLowerCase()) ||
+        (app.courseTitle && app.courseTitle.toLowerCase().includes(appSearchKeyword.toLowerCase())) ||
+        (app.email && app.email.toLowerCase().includes(appSearchKeyword.toLowerCase()));
+      return matchesStatus && matchesCourse && matchesDate && matchesSearch;
+    });
+  }
+
   if (!apps.length) {
-    alert('No application records to export.');
+    showNotification('No candidate application records to export.', 'warning');
     return;
   }
 
   const headers = ['Application ID', 'Applied Date', 'Full Name', 'Guardian Name', 'Phone', 'Email', 'DOB', 'Gender', 'Address', 'City', 'Pincode', 'Course', 'Vehicle', 'Preferred Slot', 'License Status', 'Status', 'Admin Remarks'];
   const rows = apps.map(a => [
-    `"${a.id}"`,
-    `"${a.appliedDate}"`,
+    `"${a.id || ''}"`,
+    `"${a.appliedDate || ''}"`,
     `"${(a.fullName || '').replace(/"/g, '""')}"`,
     `"${(a.guardianName || '').replace(/"/g, '""')}"`,
-    `"${a.phone}"`,
+    `"${a.phone || ''}"`,
     `"${a.email || ''}"`,
     `"${a.dob || ''}"`,
     `"${a.gender || ''}"`,
@@ -440,14 +539,26 @@ function exportApplicationsCSV() {
     `"${(a.adminRemarks || '').replace(/"/g, '""')}"`
   ]);
 
-  const csvContent = 'data:text/csv;charset=utf-8,' + [headers.join(','), ...rows.map(e => e.join(','))].join('\n');
-  const encodedUri = encodeURI(csvContent);
+  const csvContent = '\uFEFF' + [headers.join(','), ...rows.map(e => e.join(','))].join('\r\n');
+  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
   const link = document.createElement('a');
-  link.setAttribute('href', encodedUri);
-  link.setAttribute('download', `Ghoshpukur_Motor_Training_Applications_${new Date().toISOString().slice(0, 10)}.csv`);
+  link.setAttribute('href', url);
+  let filterTag = '';
+  if (appStatusFilter !== 'all') filterTag += `_${appStatusFilter}`;
+  if (appDatePreset !== 'all') filterTag += `_${appDatePreset}`;
+  link.setAttribute('download', `Ghoshpukur_MTS_Applications${filterTag}_${new Date().toISOString().slice(0, 10)}.csv`);
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+
+  showNotification(`Exported ${apps.length} candidate applications to CSV!`, 'success');
+}
+
+// Print Applications Table
+function printApplicationsTable() {
+  window.print();
 }
 
 /* ==========================================================================
@@ -462,7 +573,7 @@ function renderAdminSlides() {
   tableBody.innerHTML = slides.map(slide => `
     <tr>
       <td>
-        <img src="${slide.imageUrl}" alt="${escapeHtml(slide.title)}" class="table-thumbnail" onerror="this.src='https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=300&q=80'">
+        <img src="${slide.imageUrl}" alt="${escapeHtml(slide.title)}" loading="lazy" class="table-thumbnail" onerror="this.src='https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=300&q=80'">
       </td>
       <td>
         <strong>${escapeHtml(slide.title)}</strong>
@@ -655,7 +766,7 @@ function renderAdminGallery() {
   tableBody.innerHTML = gallery.map(item => `
     <tr>
       <td>
-        <img src="${item.imageUrl}" alt="${escapeHtml(item.title)}" class="table-thumbnail" onerror="this.src='https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=300&q=80'">
+        <img src="${item.imageUrl}" alt="${escapeHtml(item.title)}" loading="lazy" class="table-thumbnail" onerror="this.src='https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=300&q=80'">
       </td>
       <td>
         <strong>${escapeHtml(item.title)}</strong>
@@ -909,10 +1020,12 @@ function initAdminForms() {
 
   // Application search and filters
   const searchInput = document.getElementById('appSearchInput');
+  let applicationSearchTimer = null;
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
       appSearchKeyword = e.target.value.trim();
-      renderAdminApplications();
+      window.clearTimeout(applicationSearchTimer);
+      applicationSearchTimer = window.setTimeout(renderAdminApplications, 180);
     });
   }
 
@@ -924,10 +1037,88 @@ function initAdminForms() {
     });
   }
 
-  // Export CSV button
+  const courseFilterSelect = document.getElementById('appCourseFilterSelect');
+  if (courseFilterSelect) {
+    courseFilterSelect.addEventListener('change', (e) => {
+      appCourseFilter = e.target.value;
+      renderAdminApplications();
+    });
+  }
+
+  const sortSelect = document.getElementById('appSortSelect');
+  if (sortSelect) {
+    sortSelect.addEventListener('change', (e) => {
+      appSortOrder = e.target.value;
+      renderAdminApplications();
+    });
+  }
+
+  const datePresetSelect = document.getElementById('appDatePresetSelect');
+  const customDateRange = document.getElementById('appCustomDateRange');
+  const dateFromInput = document.getElementById('appDateFrom');
+  const dateToInput = document.getElementById('appDateTo');
+
+  if (datePresetSelect) {
+    datePresetSelect.addEventListener('change', (e) => {
+      appDatePreset = e.target.value;
+      if (customDateRange) {
+        customDateRange.style.display = appDatePreset === 'custom' ? 'flex' : 'none';
+      }
+      renderAdminApplications();
+    });
+  }
+
+  if (dateFromInput) {
+    dateFromInput.addEventListener('change', (e) => {
+      appDateFrom = e.target.value;
+      renderAdminApplications();
+    });
+  }
+
+  if (dateToInput) {
+    dateToInput.addEventListener('change', (e) => {
+      appDateTo = e.target.value;
+      renderAdminApplications();
+    });
+  }
+
+  const resetFiltersBtn = document.getElementById('resetAppFiltersBtn');
+  if (resetFiltersBtn) {
+    resetFiltersBtn.addEventListener('click', () => {
+      appSearchKeyword = '';
+      appStatusFilter = 'all';
+      appCourseFilter = 'all';
+      appSortOrder = 'newest';
+      appDatePreset = 'all';
+      appDateFrom = '';
+      appDateTo = '';
+      if (searchInput) searchInput.value = '';
+      if (statusFilterSelect) statusFilterSelect.value = 'all';
+      if (courseFilterSelect) courseFilterSelect.value = 'all';
+      if (sortSelect) sortSelect.value = 'newest';
+      if (datePresetSelect) datePresetSelect.value = 'all';
+      if (dateFromInput) dateFromInput.value = '';
+      if (dateToInput) dateToInput.value = '';
+      if (customDateRange) customDateRange.style.display = 'none';
+      renderAdminApplications();
+      showNotification('Candidate filters reset.', 'info');
+    });
+  }
+
+  // Export CSV buttons (overview tab and applications toolbar)
   const exportBtn = document.getElementById('exportAppsCsvBtn');
   if (exportBtn) {
-    exportBtn.addEventListener('click', () => exportApplicationsCSV());
+    exportBtn.addEventListener('click', () => exportApplicationsCSV(false));
+  }
+
+  const exportToolbarBtn = document.getElementById('exportAppsToolbarBtn');
+  if (exportToolbarBtn) {
+    exportToolbarBtn.addEventListener('click', () => exportApplicationsCSV(true));
+  }
+
+  const printToolbarBtn = document.getElementById('printAppsToolbarBtn');
+  if (printToolbarBtn) {
+    printToolbarBtn.addEventListener('click', () => printApplicationsTable());
   }
 
   // Add Slide / Course / Gallery buttons
