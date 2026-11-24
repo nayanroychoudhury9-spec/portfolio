@@ -847,7 +847,20 @@ button, input, select, textarea {
   box-shadow: var(--shadow-xl);
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+}
+
+.admission-callout-card {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: stretch;
+}
+
+.contact-layout-card {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.training-areas-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .form-sidebar-info {
@@ -1763,7 +1776,25 @@ input:checked + .slider-toggle:before {
 /* Responsive Breakpoints */
 @media (max-width: 992px) {
   .form-wrapper-card {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+  .nav-menu {
+    position: fixed;
+    top: 100px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 100px);
+    background: white;
+    flex-direction: column;
+    padding: 2rem;
+    transition: left 0.3s ease;
+    box-shadow: var(--shadow-xl);
+  }
+  .nav-menu.open {
+    left: 0;
   }
   .footer-grid {
     grid-template-columns: 1fr 1fr;
@@ -1783,32 +1814,82 @@ input:checked + .slider-toggle:before {
   .top-bar-left {
     display: none;
   }
-  .mobile-menu-btn {
-    display: block;
-  }
   .nav-menu {
-    position: fixed;
-    top: 68px;
-    left: -100%;
-    width: 100%;
-    height: calc(100vh - 68px);
-    background: white;
-    flex-direction: column;
-    padding: 2rem;
-    transition: left 0.3s ease;
-    box-shadow: var(--shadow-xl);
-  }
-  .nav-menu.open {
-    left: 0;
+    top: 112px;
+    height: calc(100vh - 112px);
   }
   .form-grid-2, .form-grid-3 {
     grid-template-columns: 1fr;
+  }
+  .highlights-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .highlight-box {
+    border-right: 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .highlight-box:last-child {
+    border-bottom: 0;
+  }
+  .courses-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .training-areas-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  #contact .school-whatsapp-link {
+    width: 100%;
+    white-space: normal;
+  }
+  .nav-container {
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+  }
+  .brand-logo {
+    flex: 1;
+    min-width: 0;
+    gap: 0.5rem;
+  }
+  .logo-icon-wrapper {
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+  }
+  .brand-text {
+    min-width: 0;
+  }
+  .brand-text h1 {
+    font-size: 1rem;
+  }
+  .brand-text span {
+    font-size: 0.6rem;
+  }
+  .nav-actions {
+    flex: 0 0 auto;
+    gap: 0.35rem;
+  }
+  .nav-actions .btn {
+    padding: 0.55rem 0.65rem;
+    font-size: 0.78rem;
+    gap: 0.35rem;
+  }
+  .mobile-menu-btn {
+    font-size: 1.3rem;
   }
   .form-main-content {
     padding: 1.75rem 1.25rem;
   }
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .footer-col {
+    min-width: 0;
+  }
+  .footer-col .brand-text {
+    min-width: 0;
+  }
+  .footer-contact-item .school-email-text {
+    overflow-wrap: anywhere;
   }
   .admin-layout {
     flex-direction: column;
