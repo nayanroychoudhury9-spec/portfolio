@@ -768,24 +768,20 @@
           Sign in to manage banner pictures, driving courses, gallery photos, toggle show/hide, and review candidate applications.
         </p>
 
-        <form id="adminLoginForm">
+        <form id="adminLoginForm" autocomplete="off">
           <div class="form-group">
             <label class="form-label" for="adminUsernameInput">Username</label>
-            <input type="text" class="form-control" id="adminUsernameInput" value="admin" required placeholder="Enter username">
+            <input type="text" class="form-control" id="adminUsernameInput" autocomplete="off" required placeholder="Enter username">
           </div>
           <div class="form-group">
             <label class="form-label" for="adminPasswordInput">Password</label>
-            <input type="password" class="form-control" id="adminPasswordInput" value="admin123" required placeholder="Enter password">
+            <input type="password" class="form-control" id="adminPasswordInput" autocomplete="new-password" required placeholder="Enter password">
           </div>
           <div id="adminLoginError" style="color:var(--danger); font-size:0.85rem; margin-bottom:1rem; display:none;"></div>
           <button type="submit" class="btn btn-primary" style="width:100%;">
             <i class="fa-solid fa-right-to-bracket"></i> Login to Admin Dashboard
           </button>
         </form>
-
-        <div style="margin-top:1.25rem; padding:0.75rem; background:#f8fafc; border-radius:8px; font-size:0.8rem; color:#64748b; text-align:center;">
-          <i class="fa-solid fa-key"></i> Default Demo Credentials: <strong>admin</strong> / <strong>admin123</strong>
-        </div>
       </div>
     </div>
   </div>
@@ -999,9 +995,6 @@
               <div class="table-toolbar-actions">
                 <button type="button" class="btn btn-primary btn-sm" id="exportAppsToolbarBtn" title="Export to CSV (Excel compatible)">
                   <i class="fa-solid fa-file-excel"></i> Export CSV
-                </button>
-                <button type="button" class="btn btn-outline btn-sm" id="printAppsToolbarBtn" title="Print candidate list / Save as PDF">
-                  <i class="fa-solid fa-print"></i> Print
                 </button>
               </div>
             </div>

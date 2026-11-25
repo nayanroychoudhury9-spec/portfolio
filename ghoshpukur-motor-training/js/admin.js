@@ -43,6 +43,8 @@ function initAdminAuth() {
       const username = document.getElementById('adminUsernameInput').value.trim();
       const password = document.getElementById('adminPasswordInput').value;
       const errorEl = document.getElementById('adminLoginError');
+      document.getElementById('adminUsernameInput').value = '';
+      document.getElementById('adminPasswordInput').value = '';
 
       if (GMTS_DB.verifyCredentials(username, password)) {
         sessionStorage.setItem(ADMIN_SESSION_KEY, 'true');
@@ -52,7 +54,7 @@ function initAdminAuth() {
         showNotification('Login Successful! Welcome to Admin Panel.', 'success');
       } else {
         if (errorEl) {
-          errorEl.textContent = 'Invalid username or password! Default is admin / admin123';
+          errorEl.textContent = 'Invalid username or password.';
           errorEl.style.display = 'block';
         }
       }
@@ -85,7 +87,11 @@ function initAdminAuth() {
 
 function openAdminLogin() {
   const loginModal = document.getElementById('adminLoginModal');
+  const usernameInput = document.getElementById('adminUsernameInput');
+  const passwordInput = document.getElementById('adminPasswordInput');
   const errorEl = document.getElementById('adminLoginError');
+  if (usernameInput) usernameInput.value = '';
+  if (passwordInput) passwordInput.value = '';
   if (errorEl) errorEl.style.display = 'none';
   if (loginModal) loginModal.classList.add('open');
 }
@@ -554,11 +560,6 @@ function exportApplicationsCSV(exportFilteredOnly = true) {
   URL.revokeObjectURL(url);
 
   showNotification(`Exported ${apps.length} candidate applications to CSV!`, 'success');
-}
-
-// Print Applications Table
-function printApplicationsTable() {
-  window.print();
 }
 
 /* ==========================================================================
@@ -1114,11 +1115,6 @@ function initAdminForms() {
   const exportToolbarBtn = document.getElementById('exportAppsToolbarBtn');
   if (exportToolbarBtn) {
     exportToolbarBtn.addEventListener('click', () => exportApplicationsCSV(true));
-  }
-
-  const printToolbarBtn = document.getElementById('printAppsToolbarBtn');
-  if (printToolbarBtn) {
-    printToolbarBtn.addEventListener('click', () => printApplicationsTable());
   }
 
   // Add Slide / Course / Gallery buttons
